@@ -6,7 +6,7 @@ function Search()
 {
   const {t,i18n}=useTranslation();
     const {search,setsearch}=useContext(NoteContext);
-    const changelanguage=()=>i18n.changeLanguage(i18n.language==="en"?"hi":"en");
+    const changeLanguage=()=>i18n.changeLanguage(i18n.language==="en"?"hi":"en");
     return(
       <div className="search-container">
         <div className="search">
@@ -14,7 +14,7 @@ function Search()
       type="text"
       className="search-input"
       value={search}
-      placeholder={t("search")}
+      placeholder="Search Here"
       onChange={(e) => {
         setsearch(e.target.value);
       }}
@@ -25,7 +25,7 @@ function Search()
     <MdSearch size="2.5rem"></MdSearch>
   </div>
   <div className="language-icon" >
-    <MdLanguage size="2rem" onClick={changelanguage}/>
+    <MdLanguage size="2rem" onClick={changeLanguage}/>
   </div>
       </div>  
     
