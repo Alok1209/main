@@ -3,6 +3,7 @@ import Search from "./Search";
 import NoteCom from "./NoteCom";
 import CreateNote from "./CreateNote"
 import "./Project.css";
+import { useTranslation } from "react-i18next";
 export const NoteContext = createContext(null);
 function Project() {
   const [Notes, setNotes] = useState([]);
@@ -12,6 +13,8 @@ function Project() {
   const [dialog, setdialog] = useState(false);
   const [edit, setedit] = useState(false);
   // const [edited,setedited]=useState("");
+
+const [t]=useTranslation();
 
   const addNote = () => {
     if (note.trim() !== "" || Title.trim() !== "") {
@@ -57,7 +60,7 @@ function Project() {
   return (
     <div className="Page-background">
       <div className="header ">
-        <h1>NOTES</h1>
+        <h1>{t("notes")}</h1>
       </div>
       <NoteContext.Provider value={value}>
         <Search />
